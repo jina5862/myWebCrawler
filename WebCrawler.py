@@ -26,10 +26,18 @@ def webCrawling(keyword, page_count):
 
 
 def main():
-    keyword = input("enter the keyword you're looking for : ")
-    page_count = int(input("검색할 페이지 수 입력"))
+    stock = []
+    while(True) :
+        s=input("보유한 주식명을 입력하시오 : ")
+        stock.append(s)
+        if(s==""): break
 
-    result = webCrawling(keyword, page_count)
-    print(result)
+    page_count = int(input("검색할 페이지 수 입력"))
+    for st in stock :
+        print(st+" 관한 뉴스 제목: ")
+        result = webCrawling(st, page_count)
+        print(result)
+        print("========================================\n\n")
+
 
 main()
